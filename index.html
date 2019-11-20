@@ -5,12 +5,12 @@
 </head>
 
 <body>
-    <form onsubmit="return handleClick(event)">
+    <form id="weatherForm">
         <label for="city">
-            Write city for looking weather:
+            Write city 4 looking weather:
         </label>
         <input id="city" />
-        <button type="submit">Search</button>
+        <button type="submit">Go</button>
     </form>
     <div id="weather"></div>
     <script src="./node_modules/mustache/mustache.js"></script>
