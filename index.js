@@ -1,5 +1,5 @@
 const APIKey = '7b6d16b9aad94f104b9310d42ef9ebf0';
-let template = `
+const templateOnSuccess = `
     {{#weather}}
         <p>The weather - {{description}}.</p>
     {{/weather}}
@@ -15,19 +15,23 @@ let template = `
         <p>City is located in - {{country}}.</p>
     {{/sys}}
 `;
-async function handleClick() {
-    const inputValue = document.getElementById('city').value;
+const templateOnError = `
+    <div>Something wrong.Try later.</div>
+    <div>Response is: ${weather.status} ${weather.statusText}</div>
+`;
+async function handleClick(e) {
+    e.preventDefault();
+    let inputValue = document.getElementById('city').value;
     const outputField = document.getElementById('weather');
-    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&APPID=${APIKey}`);
+    outputField.innerHTML = await getWeatherData(inputValue);
+}
+async function getWeatherData(inputValue) {
+    let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&APPID=${APIKey}`);
     if (weather.ok) {
         const jsonWeather = await weather.json();
-        const html = Mustache.to_html(template, jsonWeather);
-        outputField.innerHTML = html;
+        const html = Mustache.to_html(templateOnSuccess, jsonWeather);
+        return html;
     } else {
-        template = `
-        <div > Something wrong.Try later. </div>
-        <div> Response is: ${weather.status} ${weather.statusText}</div>
-    `;
-        outputField.innerHTML = template;
+        return templateOnError;
     }
 }

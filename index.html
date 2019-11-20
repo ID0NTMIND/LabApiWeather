@@ -5,11 +5,13 @@
 </head>
 
 <body>
-    <label for="city">
-       Write city 4 looking weather:
-   </label>
-    <input id="city" />
-    <button type="button" onClick={handleClick()}>Search</button>
+    <form onsubmit="return handleClick(event)">
+        <label for="city">
+            Write city for looking weather:
+        </label>
+        <input id="city" />
+        <button type="submit">Search</button>
+    </form>
     <div id="weather"></div>
     <script src="./node_modules/mustache/mustache.js"></script>
     <script type="text/javascript" src="index.js"></script>
