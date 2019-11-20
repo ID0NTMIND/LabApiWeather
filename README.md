@@ -1,4 +1,5 @@
-# LabApiWeather
+LabApiWeather
+***
 This is my University work, If you want to run this project, follow a few simple steps.
 
 Step One.
