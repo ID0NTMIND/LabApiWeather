@@ -15,12 +15,12 @@ const templateOnSuccess = `
         <p>City is located in - {{country}}.</p>
     {{/sys}}
 `;
-
-document.getElementById('weatherForm').addEventListener('submit', handleSubmit);
 const templateOnError = `
     <div>Something wrong.Try later.</div>
     <div>Response is: {{cod}} {{message}}</div>
 `;
+
+document.getElementById('weatherForm').addEventListener('submit', handleSubmit);
 async function handleSubmit(e) {
     e.preventDefault();
     if (e.target[0].value === '') {
