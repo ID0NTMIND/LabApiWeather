@@ -1,18 +1,21 @@
 const APIKey = '7b6d16b9aad94f104b9310d42ef9ebf0';
-let template = template `
+let template = `
     {{#weather}}
-        <p>The weather is {{description}}</p>
+        <p>The weather - {{description}}.</p>
     {{/weather}}
     {{#main}}
-        <p>The temperature is {{temp}} in Kelvins</p>
-        <p>The humidity is {{humidity}}%</p>
-        <p>The pressure is {{pressure}} hPa</p>
+        <p>The temperature - {{temp}} K.</p>
+        <p>The humidity - {{humidity}}%.</p>
+        <p>The pressure - {{pressure}} hPa.</p>
     {{/main}}
     {{#wind}}
-        <p>The wind is {{speed}} meters per hour</p>
+        <p>The wind - {{speed}} meters/hour.</p>
     {{/wind}}
+    {{#sys}}
+        <p>City is located in - {{country}}.</p>
+    {{/sys}}
 `;
-const handleClick = () => {
+async function handleClick() {
     const inputValue = document.getElementById('city').value;
     const outputField = document.getElementById('weather');
     const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&APPID=${APIKey}`);
@@ -21,6 +24,6 @@ const handleClick = () => {
         const html = Mustache.to_html(template, jsonWeather);
         outputField.innerHTML = html;
     } else {
-        alert(`Error while requesting API: ${weather.status} ${weather.statusText}. Try another one, please.`);
+        alert(`Error: ${weather.status} ${weather.statusText}. Try later.`);
     }
 }

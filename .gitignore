@@ -4,7 +4,7 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 node_modules
-package-lock.json
+styles.css 
 # Other files and folders
 .settings/
 
