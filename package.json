@@ -1,29 +1,31 @@
 {
-    "name": "labWeather",
-    "version": "1.0.0",
-    "description": "weatherApi,less,mutache",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "lessc styles.less styles.css"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ID0NTMIND/LabApiWeather.git"
-    },
-    "keywords": [
-        "less",
-        "js",
-        "mustache"
-    ],
-    "author": "id0ntmind",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ID0NTMIND/LabApiWeather/issues"
-    },
-    "homepage": "https://github.com/ID0NTMIND/LabApiWeather#readme",
-    "dependencies": {
-        "less": "^3.10.3",
-        "mustache": "^3.1.0"
-    }
+  "name": "webLab",
+  "version": "0.1.0",
+  "description": "This is a web-programming lab with weather API, less and mustache",
+  "main": "index.html",
+  "dependencies": {
+    "less": "^3.10.3",
+    "mustache": "^3.1.0",
+    "sinon": "^7.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "lessc styles.less styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cherkasik/WeatherAPILab.git"
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "less",
+    "mustache"
+  ],
+  "author": "id0ntmind",
+  "license": "UNLICENSED"
 }

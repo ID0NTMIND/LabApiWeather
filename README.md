@@ -1,20 +1,21 @@
-LabApiWeather
-***
-This is my University work, If you want to run this project, follow a few simple steps.
+# WeatherAPILab
+Web-programming lab based on working with weather API, Less and Mustache
 
-Step One.
-You need Git to be instaled.
-Clone or copy this repository 
-git clone https://github.com/ID0NTMIND/LabApiWeather.git
-(or download zip)
+First of all clone repository (you need git to be installed):
+```shell
+git clone https://github.com/Cherkasik/WeatherAPILab.git`
+```
 
-Step Two.
-Next you need to go to the root directory of the project 
-and run -npm install- to install the required dependencies
+Then
+```shell
+cd WeatherAPILab
+npm install
+```
+(you need npm to be installed). That would install all packages you need.
 
-Step Three
-If you want - change the styles in the styles file.less, then 
-use npm run build to build the project on your machine.
+To launch this project localy you need to run
+```shell
+npm run build
+```
+Then open index.html in any browser you want.
 
-Step Four
-Open the index file.html in a browser (e.g. Chrome)

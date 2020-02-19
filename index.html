@@ -1,20 +1,20 @@
-<head>
-    <meta charset="utf-8" />
-    <title>WeatherApp</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-    <form id="weatherForm">
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Weather</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+     <form id="weatherForm">
         <label for="city">
-            Write city 4 looking weather:
+            Input any city to find out weather:
         </label>
         <input id="city" />
-        <button type="submit">Go</button>
+        <button type="submit">Search</button>
     </form>
     <div id="weather"></div>
     <script src="./node_modules/mustache/mustache.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-</body>
-
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
